@@ -7,8 +7,9 @@ export interface PostMetadata {
   slug: string;
   author: string;
   readtime: number;
-  category: [];
+  category: string;
   authorContact: string;
+  postContent: any;
 }
 
 const getPostMetadata = (): PostMetadata[] => {
@@ -27,7 +28,8 @@ const getPostMetadata = (): PostMetadata[] => {
       author: matterResult.data.author,
       readtime: matterResult.data.readtime,
       category: matterResult.data.category,
-      authorContact: matterResult.data.authorContact
+      authorContact: matterResult.data.authorContact,
+      postContent: matterResult.content,
     };
   });
 

@@ -6,10 +6,7 @@ import Head from "next/head";
 import Image from "next/image";
 import React from "react";
 
-const Home = (props:{
-  postMetaData: PostMetadata[];
-}) => {
-
+const Home = (props: { postMetaData: PostMetadata[] }) => {
   return (
     <>
       <Head>
@@ -21,11 +18,10 @@ const Home = (props:{
       <div className="w-full flex justify-center mt-[140px] lg:mt-[80px]">
         <div className="w-[90%] flex flex-col gap-[30px] md:w-[65%] xl:w-[50%] 2xl:w-[35%] mt-[60px] mb-[140px]">
           {props.postMetaData?.map((post) => {
-            const categories = post.category.toString().replaceAll(",", "-");
             return (
               <PostCard
                 key={post.slug}
-                url={`/${categories}/${post.slug}`}
+                tag={post.category}
                 title={post.title}
                 author={post.author}
                 authorcontact={post.authorContact}
@@ -44,7 +40,7 @@ const Home = (props:{
 
 export default Home;
 
-export function getStaticProps() {
+export function getServerSideProps() {
   const postMetaData = getPostMetadata();
   return {
     props: {

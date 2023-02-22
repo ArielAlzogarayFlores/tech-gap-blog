@@ -4,7 +4,6 @@ import Chip from "./Chip";
 import ViewCounter from "./ViewCounter";
 
 type PostCardProps = {
-  url: string;
   title: string;
   author: string;
   authorcontact: string;
@@ -12,10 +11,10 @@ type PostCardProps = {
   readtime: number;
   views: string;
   likes: number;
+  tag: any;
 };
 
 const PostCard: React.FC<PostCardProps> = ({
-  url,
   title,
   author,
   authorcontact,
@@ -23,6 +22,7 @@ const PostCard: React.FC<PostCardProps> = ({
   readtime,
   views,
   likes,
+  tag,
 }) => {
   return (
     <div className="flex w-[100%] colum flex-col p-[30px] ease-out duration-150 rounded gap-[15px] border border-Background-Light bg-Background-Default">
@@ -30,7 +30,7 @@ const PostCard: React.FC<PostCardProps> = ({
         {date} · {readtime} mins ·{"  "}
         <ViewCounter slug={views} blogPage={false} />
       </div>
-      <Link href={url}>
+      <Link href={`/${tag}/${views}`}>
         <h2 className="text-xl font-black text-Text-Relevant hover:underline">
           {title}
         </h2>
@@ -49,7 +49,7 @@ const PostCard: React.FC<PostCardProps> = ({
       <div className="flex justify-between items-end">
         <div className="flex overflow-hidden mr-[15px] gap-[15px]">
           <div className="w-full">
-            <Chip label="#Web-Development" />
+            <Chip label={tag} url={`/${tag}`} />
           </div>
         </div>
         <div className="flex gap-[15px]">

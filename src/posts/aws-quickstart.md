@@ -3,7 +3,7 @@ title: "Getting Started with AWS"
 date: "2022-11-27"
 author: "Luiso"
 readtime: 2
-category: ["DEVOPS", "BACKEND", "AROTU", "ALAN"]
+category: ["DEVOPS"]
 authorContact: "https://www.linkedin.com/in/ariel-alzogaray-flores-666833246/"
 ---
 

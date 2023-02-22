@@ -15,13 +15,13 @@ module.exports = {
       "Background-Default": "#010409",
       "Background-Light": "#121924",
       "Background-Variations": "#222C3C",
-      "Extras" : "#2F3A4F",
+      Extras: "#2F3A4F",
       "Text-Default": "#5A6280",
       "Text-Relevant": "#EDEDED",
-      "Save" : "#FFB800",
-      "Love" : "#F30D7C",
-      "Share" : "#A73BFC",
-      "Danger" : "#FF3232",
+      Save: "#FFB800",
+      Love: "#F30D7C",
+      Share: "#A73BFC",
+      Danger: "#FF3232",
     },
     directions: {
       // defaults to these values
@@ -47,5 +47,5 @@ module.exports = {
     },
     extend: {},
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
