@@ -7,7 +7,7 @@ const Index:React.FC = () => {
 
     const path = usePathname();
     const title = path ? path.charAt(1).toUpperCase() + path.slice(2) : '';
-
+ //Categoria, muestra titulo y cards de esa categoria, tampoco lo hicimos en el otro
     return (
         <>
           <Head>

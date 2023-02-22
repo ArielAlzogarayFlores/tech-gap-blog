@@ -45,7 +45,7 @@ export default page;
 
 export function getStaticProps() {
   const getPostContent = (slug: string) => {
-    const folder = "posts/";
+    const folder = "src/posts/";
     const file = `${folder}${slug}.md`;
     const content = fs.readFileSync(file, "utf8"); //Le muestro archivos y devuelve el contenido
     const matterResult = matter(content); //Convierte frontmatter a un objecto asi puedo acceder a las propiedades
