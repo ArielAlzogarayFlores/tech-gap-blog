@@ -40,7 +40,7 @@ const Home = (props: { postMetaData: PostMetadata[] }) => {
 
 export default Home;
 
-export function getServerSideProps() {
+export function getStaticProps() {
   const postMetaData = getPostMetadata();
   return {
     props: {
