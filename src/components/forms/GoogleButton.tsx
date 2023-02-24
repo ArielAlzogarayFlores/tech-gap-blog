@@ -20,7 +20,7 @@ const GoogleButton: React.FC<GoogleButtonProps> = () => {
   return (
     <button
       type="button"
-      className="text-[#767676] cursor-pointer bg-[#fff] rounded text-base px-[42.5px] py-[16px] text-center flex items-center gap-[15px] font-medium border border-[#767676] justify-center"
+      className="text-Text-Relevant-LT border bg-Background-Default-LT dark:bg-Text-Relevant border-Background-Variations-LT dark:border-Background-Variations cursor-pointer rounded text-base px-[42.5px] py-[16px] text-center flex items-center gap-[15px] font-medium justify-center"
       onClick={login}
     >
       <svg

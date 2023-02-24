@@ -6,9 +6,9 @@ const Divider: React.FC<DividerProps> = () => {
   return (
     <>
       <div className="relative flex items-center">
-        <div className="flex-grow border-t border-Background-Variations"></div>
-        <span className="flex-shrink mx-4 text-Background-Variations">OR</span>
-        <div className="flex-grow border-t border-Background-Variations"></div>
+        <div className="flex-grow border-t dark:border-Background-Variations border-Background-Variations-LT"></div>
+        <span className="flex-shrink mx-4 dark:text-Background-Variations text-Background-Variations-LT dark:font-medium">OR</span>
+        <div className="flex-grow border-t dark:border-Background-Variations text-Background-Variations-LT"></div>
       </div>
     </>
   );

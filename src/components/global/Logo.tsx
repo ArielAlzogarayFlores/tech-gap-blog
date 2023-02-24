@@ -19,11 +19,12 @@ const Logo: React.FC<LogoProps> = () => {
             clipRule="evenodd"
             d="M3.97853 16H14.3971C15.2824 16 16 15.0449 16 13.8667V0L3.97853 16Z"
             fill="#EDEDED"
+            className="dark:fill-[#EDEDED] fill-Text-Relevant-LT"
           />
-          <path d="M3.97853 16L16 0H12.0215L0 16H3.97853Z" fill="#8189A8" />
+          <path d="M3.97853 16L16 0H12.0215L0 16H3.97853Z" fill="#8189A8" className="dark:fill-#8189A8 fill-Text-Default-LT" />
         </svg>
 
-        <p>Tech-Gap.</p>
+        <p className="dark:text-Text-Relevant text-Text-Relevant-LT">Tech-Gap.</p>
       </Link>
     </div>
   );

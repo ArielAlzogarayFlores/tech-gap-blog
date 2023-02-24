@@ -52,7 +52,7 @@ const UserForm: React.FC<UserFormProps> = ({ text, link, url }) => {
     <form className="flex flex-col gap-[15px] mx-[30px]" >
       <Input changeProp={handleChange} />
       <CtaButton btnType="submit" label="Login to your account" icon={<></>} />
-      <p className="text-Text-Relevant text-center">
+      <p className="dark:text-Text-Relevant text-Text-Relevant-LT font-medium text-center">
         {text}{" "}
         <Link href={url} className="text-CTA-Default hover:underline">
           {link}
