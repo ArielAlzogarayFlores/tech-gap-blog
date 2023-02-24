@@ -6,6 +6,12 @@ import Head from "next/head";
 import Image from "next/image";
 import React from "react";
 
+import type { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import type { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
+type Props = {};
+
 const Home = (props: { postMetaData: PostMetadata[] }) => {
   return (
     <>
@@ -39,11 +45,13 @@ const Home = (props: { postMetaData: PostMetadata[] }) => {
 
 export default Home;
 
-export function getStaticProps() {
+export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => {
   const postMetaData = getPostMetadata();
+
   return {
     props: {
+      ...(await serverSideTranslations(locale ?? "en", ["common"])),
       postMetaData,
     },
   };
-}
+};

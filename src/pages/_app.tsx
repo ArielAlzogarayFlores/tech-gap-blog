@@ -5,6 +5,7 @@ import DefaultLayout from "@/components/layout/DefaultLayout";
 import AuthLayout from "@/components/layout/AuthLayout";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { appWithTranslation } from "next-i18next";
 
 const satoshi = localFont({
   src: "../../public/font/Satoshi-Variable.woff2",
@@ -23,7 +24,8 @@ export const toggleTheme = () => {
   }
 }
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
+
   const router = useRouter();
   const isLoginPage = router.pathname === "/login";
   const isSignupPage = router.pathname === "/signup";
@@ -52,3 +54,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </>
   );
 }
+
+export default appWithTranslation(App)

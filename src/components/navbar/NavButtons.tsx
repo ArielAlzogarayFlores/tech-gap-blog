@@ -2,17 +2,23 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { useTranslation } from "next-i18next";
+
+
 type NavButtonsProps = {
   toggleMethod: () => void;
   state: boolean;
 };
 
+
 const NavButtons: React.FC<NavButtonsProps> = ({ toggleMethod, state }) => {
   const path = usePathname();
 
+  const { t } = useTranslation("common");
+
   //This line must be inside the span className
   // ${/* path.length === '/' ? 'h-full opacity-100' : 'h-[1px] opacity-0 group-hover:opacity-100' */}image.png
- //asdasd
+  //asdasd
 
   return (
     <>
@@ -46,7 +52,7 @@ const NavButtons: React.FC<NavButtonsProps> = ({ toggleMethod, state }) => {
                   : "text-Text-Relevant"
               }`}
             >
-              About
+              {t("About")}
             </Link>
             <span
               className={`w-full ${
@@ -66,7 +72,7 @@ const NavButtons: React.FC<NavButtonsProps> = ({ toggleMethod, state }) => {
                   : "text-Text-Relevant"
               }`}
             >
-              Contact
+              {t("Contact")}
             </Link>
             <span
               className={`w-full ${
@@ -123,4 +129,5 @@ const NavButtons: React.FC<NavButtonsProps> = ({ toggleMethod, state }) => {
     </>
   );
 };
+
 export default NavButtons;

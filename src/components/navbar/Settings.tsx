@@ -1,13 +1,25 @@
 import { toggleTheme } from "@/pages/_app";
 import React from "react";
+import { useRouter } from "next/router";
 
 type SettingsProps = {};
 
 const Settings: React.FC<SettingsProps> = () => {
 
+  const router = useRouter()
+  const activeLanguage = router.locale
+
+  const onToggleLanguageClick = (newLocale: string) => {
+    const { pathname, asPath, query } = router
+    router.push({ pathname, query }, asPath, { locale: newLocale })
+  }
+
+  const changeTo = router.locale === 'en' ? 'es' : 'en'
+
+
   return (
     <div className="flex lg:flex-col gap-[15px] text-base">
-      <button className="text-Text-Default font-medium flex items-center justify-start gap-[10px]">
+      <button onClick={() => onToggleLanguageClick(changeTo)} className="text-Text-Default font-medium flex items-center justify-start gap-[10px]">
         <svg
           width="24"
           height="24"
@@ -22,8 +34,8 @@ const Settings: React.FC<SettingsProps> = () => {
           />
         </svg>
         <div className="hidden lg:block">
-          <span className="text-Text-Relevant">English </span>|
-          <span className="text-Text-Default"> Español</span>
+          <span className= {`${activeLanguage === 'en' ? 'text-Text-Relevant' : 'text-Text-Default'}`} >English </span>|
+          <span className= {`${activeLanguage === 'en' ? 'text-Text-Default' : 'text-Text-Relevant'}`}> Español</span>
         </div>
       </button>
       <button onClick={toggleTheme}  className="text-Text-Default font-medium flex items-center justify-start gap-[10px]">

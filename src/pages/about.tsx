@@ -2,6 +2,12 @@ import TeamMember from "@/components/teammember/TeamMember";
 import Head from "next/head";
 import React from "react";
 
+import type { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import type { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
+type Props = {};
+
 type AboutProps = {};
 
 const About: React.FC<AboutProps> = () => {
@@ -69,3 +75,11 @@ const About: React.FC<AboutProps> = () => {
   );
 };
 export default About;
+
+export const getStaticProps: GetStaticProps<Props> = async ({
+  locale,
+}) => ({
+  props: {
+    ...(await serverSideTranslations(locale ?? "en", ["common"])),
+  },
+});
