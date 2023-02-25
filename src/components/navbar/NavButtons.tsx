@@ -1,35 +1,29 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
 import { useTranslation } from "next-i18next";
-
 
 type NavButtonsProps = {
   toggleMethod: () => void;
   state: boolean;
 };
 
-
 const NavButtons: React.FC<NavButtonsProps> = ({ toggleMethod, state }) => {
   const path = usePathname();
-
   const { t } = useTranslation("common");
-
-  //This line must be inside the span className
-  // ${/* path.length === '/' ? 'h-full opacity-100' : 'h-[1px] opacity-0 group-hover:opacity-100' */}image.png
-  //asdasd
 
   return (
     <>
-      <nav className="h-[80px] fixed bottom-0 w-screen lg:static lg:w-auto bg-Background-Default">
+      <nav className="h-[80px] fixed bottom-0 w-screen lg:static lg:w-auto dark:bg-Background-Default bg-Background-Default-LT">
         <ul className="h-full w-full flex items-center justify-center">
-          <li className="h-full flex-grow lg:flex-grow-0 lg:w-[170px] relative group overflow-hidden flex items-center justify-center border-t border-l lg:border-t-0 lg:border-b border-Background-Light">
+          <li className="h-full flex-grow lg:flex-grow-0 lg:w-[170px] relative group overflow-hidden flex items-center justify-center border-t lg:border-l lg:border-t-0 lg:border-b dark:border-Background-Light border-Background-Light-LT">
             {" "}
             <Link
               href="/"
               className={`w-full h-full text-center flex items-center justify-center z-10 font-medium ${
-                path === "/" ? "text-Background-Default" : "text-Text-Relevant"
+                path === "/"
+                  ? "dark:text-Background-Default text-Background-Default-LT"
+                  : "dark:text-Text-Relevant text-Text-Relevant-LT "
               }`}
             >
               Posts
@@ -39,17 +33,17 @@ const NavButtons: React.FC<NavButtonsProps> = ({ toggleMethod, state }) => {
                 path === "/"
                   ? "h-full opacity-100"
                   : "h-[1px] opacity-0 group-hover:opacity-100"
-              } absolute bottom-[0px] bg-Text-Relevant ease-in duration-200`}
+              } absolute bottom-[0px] dark:bg-Text-Relevant bg-Text-Relevant-LT ease-in duration-200`}
             ></span>
           </li>
-          <li className="h-full flex-grow lg:flex-grow-0 lg:w-[170px] relative group overflow-hidden flex items-center justify-center border-t border-l lg:border-t-0 lg:border-b border-Background-Light text-Text-Relevant">
+          <li className="h-full flex-grow lg:flex-grow-0 lg:w-[170px] relative group overflow-hidden flex items-center justify-center border-t border-l lg:border-t-0 lg:border-b dark:border-Background-Light border-Background-Light-LT">
             {" "}
             <Link
               href="/about"
               className={`w-full h-full text-center flex items-center justify-center z-10 font-medium ${
                 path === "/about"
-                  ? "text-Background-Default"
-                  : "text-Text-Relevant"
+                  ? "dark:text-Background-Default text-Background-Default-LT"
+                  : "dark:text-Text-Relevant text-Text-Relevant-LT "
               }`}
             >
               {t("About")}
@@ -59,17 +53,17 @@ const NavButtons: React.FC<NavButtonsProps> = ({ toggleMethod, state }) => {
                 path === "/about"
                   ? "h-full opacity-100"
                   : "h-[1px] opacity-0 group-hover:opacity-100"
-              } absolute bottom-[0px] bg-Text-Relevant ease-in duration-200`}
+              } absolute bottom-[0px] dark:bg-Text-Relevant bg-Text-Relevant-LT ease-in duration-200`}
             ></span>
           </li>
-          <li className="h-full flex-grow lg:flex-grow-0 lg:w-[170px] relative group overflow-hidden flex items-center justify-center border-t border-l lg:border-t-0 lg:border-b border-Background-Light text-Text-Relevant">
+          <li className="h-full flex-grow lg:flex-grow-0 lg:w-[170px] relative group overflow-hidden flex items-center justify-center border-t border-l lg:border-t-0 lg:border-b dark:border-Background-Light border-Background-Light-LT">
             {" "}
             <Link
               href="/contact"
               className={`w-full h-full text-center flex items-center justify-center z-10 font-medium ${
                 path === "/contact"
-                  ? "text-Background-Default"
-                  : "text-Text-Relevant"
+                  ? "dark:text-Background-Default text-Background-Default-LT"
+                  : "dark:text-Text-Relevant text-Text-Relevant-LT "
               }`}
             >
               {t("Contact")}
@@ -79,13 +73,13 @@ const NavButtons: React.FC<NavButtonsProps> = ({ toggleMethod, state }) => {
                 path === "/contact"
                   ? "h-full opacity-100"
                   : "h-[1px] opacity-0 group-hover:opacity-100"
-              } absolute bottom-[0px] bg-Text-Relevant ease-in duration-200`}
+              } absolute bottom-[0px] dark:bg-Text-Relevant bg-Text-Relevant-LT ease-in duration-200`}
             ></span>
           </li>
           <li
             onClick={toggleMethod}
             title="Settings"
-            className="h-full flex-grow  cursor-pointer lg:flex-grow-0 lg:w-[170px] relative group overflow-hidden hidden lg:flex items-center justify-center border-t border-l lg:border-t-0 lg:border-b border-Background-Light text-Text-Relevant"
+            className="h-full flex-grow  cursor-pointer lg:flex-grow-0 lg:w-[170px] relative group overflow-hidden hidden lg:flex items-center justify-center border-t border-l lg:border-t-0 lg:border-b dark:border-Background-Light border-Background-Light-LT"
           >
             <svg
               width="46"
@@ -99,27 +93,24 @@ const NavButtons: React.FC<NavButtonsProps> = ({ toggleMethod, state }) => {
                 width="46"
                 height="2.5"
                 transform="translate(0 15)"
-                fill={state ? "#010409" : "#EDEDED"}
-                className="ease-out duration-200"
+                className={`ease-out duration-200 ${state ? 'dark:fill-[#010409] fill-Text-Relevant' : 'dark:fill-Text-Relevant fill-Background-Default'}`}
               />
               <rect
                 width="46"
                 height="2.5"
                 transform="translate(0 7.5)"
-                fill={state ? "#010409" : "#EDEDED"}
-                className="ease-out duration-200 group-hover:w-[23px] group-hover:translate-x-[11px] group-hover:translate-y-[7.5px]"
+                className={`ease-out duration-200 group-hover:w-[23px] group-hover:translate-x-[11px] group-hover:translate-y-[7.5px] ${state ? 'dark:fill-[#010409] fill-Text-Relevant' : 'dark:fill-Text-Relevant fill-Background-Default'}`}
               />
               <rect
                 width="46"
                 height="2.5"
-                fill={state ? "#010409" : "#EDEDED"}
-                className="ease-out duration-200"
+                className={`ease-out duration-200 ${state ? 'dark:fill-[#010409] fill-Text-Relevant' : 'dark:fill-Text-Relevant fill-Background-Default'}`}
               />
             </svg>
             <span
               className={`w-full ${
                 state ? "h-full" : "h-[1px]"
-              } absolute bottom-[0px] bg-Text-Relevant ease-in duration-200 ${
+              } absolute bottom-[0px] dark:bg-Text-Relevant bg-Text-Relevant-LT ease-in duration-200 ${
                 state ? "opacity-100" : "opacity-0 group-hover:opacity-100"
               }`}
             ></span>

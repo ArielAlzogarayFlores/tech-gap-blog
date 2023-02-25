@@ -13,7 +13,7 @@ const Signup: React.FC = () => {
       </Head>
       <div className="flex h-screen flex-col justify-center items-center gap-[60px]">
         <h1 className="dark:text-Text-Relevant text-Text-Relevant-LT font-black text-xxl">Sign up</h1>
-        <UserForm text="Have an account?" link="Log in" url="/login" />
+        <UserForm text="Have an account?" link="Log in" url="/login" cta="Create an account"/>
       </div>
     </>
   );

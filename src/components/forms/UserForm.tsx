@@ -12,10 +12,11 @@ import Link from "next/link";
 type UserFormProps = {
   text: string;
   link: string;
+  cta: string;
   url: string;
 };
 
-const UserForm: React.FC<UserFormProps> = ({ text, link, url }) => {
+const UserForm: React.FC<UserFormProps> = ({ text, link, url, cta }) => {
   const [value, setValue] = useState<string>("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -51,7 +52,7 @@ const UserForm: React.FC<UserFormProps> = ({ text, link, url }) => {
   return (
     <form className="flex flex-col gap-[15px] mx-[30px]" >
       <Input changeProp={handleChange} />
-      <CtaButton btnType="submit" label="Login to your account" icon={<></>} />
+      <CtaButton btnType="submit" label={cta} icon={<></>} />
       <p className="dark:text-Text-Relevant text-Text-Relevant-LT font-medium text-center">
         {text}{" "}
         <Link href={url} className="text-CTA-Default hover:underline">

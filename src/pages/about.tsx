@@ -40,16 +40,6 @@ const About: React.FC<AboutProps> = () => {
             role="Build team & Author"
             url="https://www.linkedin.com/in/luis-embon-strizzi-9a288624a/"
           />
-          <TeamMember
-            name="Brian S."
-            role="Author"
-            url="https://www.linkedin.com/in/alan-yeger-aa1174266/"
-          />
-          <TeamMember
-            name="Lucas C."
-            role="Author"
-            url="https://www.linkedin.com/in/luis-embon-strizzi-9a288624a/"
-          />
           <div className="w-full p-[30px] lg:border-b border-Background-Light lg:border-x flex gap-[30px] flex-col mb-[80px] lg:mb-0">
             <p className="font-normal text-Text-Relevant text-lg">
               Welcome to Tech-Gap, a website made by students and for students.

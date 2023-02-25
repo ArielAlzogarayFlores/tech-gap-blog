@@ -21,7 +21,7 @@ const Logo: React.FC<LogoProps> = () => {
             fill="#EDEDED"
             className="dark:fill-[#EDEDED] fill-Text-Relevant-LT"
           />
-          <path d="M3.97853 16L16 0H12.0215L0 16H3.97853Z" fill="#8189A8" className="dark:fill-#8189A8 fill-Text-Default-LT" />
+          <path d="M3.97853 16L16 0H12.0215L0 16H3.97853Z" className="dark:fill-[#8189A8] fill-Extras-LT" />
         </svg>
 
         <p className="dark:text-Text-Relevant text-Text-Relevant-LT">Tech-Gap.</p>

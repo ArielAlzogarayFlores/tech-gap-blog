@@ -13,7 +13,7 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = ({ children }) => {
     <div className="bg-Background-Default selection:text-Text-Relevant selection:bg-CTA-Default">
       <Navbar />
       <Footer />
-      <main> {children} </main>
+      <main className="dark:bg-Background-Default bg-Background-Default-LT"> {children} </main>
     </div>
   );
 };

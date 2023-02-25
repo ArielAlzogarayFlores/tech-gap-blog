@@ -26,7 +26,7 @@ module.exports = {
       "Background-Light-LT": "#E3EBFF", 
       "Background-Variations-LT": "#BFC8EB",
       "Extras-LT": "#ABB6E2",
-      "Text-Default-LT": "#576087",
+      "Text-Default-LT": "#71799A",
       "Text-Relevant-LT": "#252B40",
       //Interactive-Colors
       "Save": "#FFB800",
