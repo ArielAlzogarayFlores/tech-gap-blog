@@ -58,7 +58,7 @@ const Settings: React.FC<SettingsProps> = () => {
 
   return (
     <div className="flex lg:flex-col gap-[15px] text-base">
-      <div className="text-Text-Default font-medium flex items-center justify-start gap-[10px]">
+      <div className="text-Text-Default font-medium flex items-center justify-start">
         <button
           onClick={() => toggleLanguageMobile()}
           className="ease-out duration-150"
@@ -101,7 +101,7 @@ const Settings: React.FC<SettingsProps> = () => {
           </button>
         </div>
       </div>
-      <div className="text-Text-Default font-medium flex items-center justify-start gap-[10px]">
+      <div className="text-Text-Default font-medium flex items-center justify-start">
         <button
           onClick={() => {
             toggleThemeMobile();

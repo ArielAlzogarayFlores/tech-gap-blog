@@ -16,12 +16,17 @@
   margin: 0;
 }
 
-html,
+
 body {
   height: 100vh;
   font-family: var(--font-satoshi);
+  background-color: #E3EBFF;
+}
+
+html.dark body {
   background-color: #010409;
 }
+
 
 @layer components {
   .text-transparent {

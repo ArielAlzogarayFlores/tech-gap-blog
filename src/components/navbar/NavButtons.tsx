@@ -16,7 +16,7 @@ const NavButtons: React.FC<NavButtonsProps> = ({ toggleMethod, state }) => {
     <>
       <nav className="h-[80px] fixed bottom-0 w-screen lg:static lg:w-auto dark:bg-Background-Default bg-Background-Default-LT">
         <ul className="h-full w-full flex items-center justify-center">
-          <li className="h-full flex-grow lg:flex-grow-0 lg:w-[170px] relative group overflow-hidden flex items-center justify-center border-t lg:border-l lg:border-t-0 lg:border-b dark:border-Background-Light border-Background-Light-LT">
+          <li className="h-full flex-grow lg:flex-grow-0 lg:w-[170px] relative group overflow-hidden flex items-center justify-center border-t lg:border-l lg:border-t-0 lg:border-b dark:border-Background-Light border-Extras-LT">
             {" "}
             <Link
               href="/"
@@ -32,11 +32,11 @@ const NavButtons: React.FC<NavButtonsProps> = ({ toggleMethod, state }) => {
               className={`w-full ${
                 path === "/"
                   ? "h-full opacity-100"
-                  : "h-[1px] opacity-0 group-hover:opacity-100"
+                  : "h-[2px] opacity-0 group-hover:opacity-100"
               } absolute bottom-[0px] dark:bg-Text-Relevant bg-Text-Relevant-LT ease-in duration-200`}
             ></span>
           </li>
-          <li className="h-full flex-grow lg:flex-grow-0 lg:w-[170px] relative group overflow-hidden flex items-center justify-center border-t border-l lg:border-t-0 lg:border-b dark:border-Background-Light border-Background-Light-LT">
+          <li className="h-full flex-grow lg:flex-grow-0 lg:w-[170px] relative group overflow-hidden flex items-center justify-center border-t border-l lg:border-t-0 lg:border-b dark:border-Background-Light border-Extras-LT">
             {" "}
             <Link
               href="/about"
@@ -52,11 +52,11 @@ const NavButtons: React.FC<NavButtonsProps> = ({ toggleMethod, state }) => {
               className={`w-full ${
                 path === "/about"
                   ? "h-full opacity-100"
-                  : "h-[1px] opacity-0 group-hover:opacity-100"
+                  : "h-[2px] opacity-0 group-hover:opacity-100"
               } absolute bottom-[0px] dark:bg-Text-Relevant bg-Text-Relevant-LT ease-in duration-200`}
             ></span>
           </li>
-          <li className="h-full flex-grow lg:flex-grow-0 lg:w-[170px] relative group overflow-hidden flex items-center justify-center border-t border-l lg:border-t-0 lg:border-b dark:border-Background-Light border-Background-Light-LT">
+          <li className="h-full flex-grow lg:flex-grow-0 lg:w-[170px] relative group overflow-hidden flex items-center justify-center border-t border-l lg:border-t-0 lg:border-b dark:border-Background-Light border-Extras-LT">
             {" "}
             <Link
               href="/contact"
@@ -72,14 +72,14 @@ const NavButtons: React.FC<NavButtonsProps> = ({ toggleMethod, state }) => {
               className={`w-full ${
                 path === "/contact"
                   ? "h-full opacity-100"
-                  : "h-[1px] opacity-0 group-hover:opacity-100"
+                  : "h-[2px] opacity-0 group-hover:opacity-100"
               } absolute bottom-[0px] dark:bg-Text-Relevant bg-Text-Relevant-LT ease-in duration-200`}
             ></span>
           </li>
           <li
             onClick={toggleMethod}
             title="Settings"
-            className="h-full flex-grow  cursor-pointer lg:flex-grow-0 lg:w-[170px] relative group overflow-hidden hidden lg:flex items-center justify-center border-t border-l lg:border-t-0 lg:border-b dark:border-Background-Light border-Background-Light-LT"
+            className="h-full flex-grow  cursor-pointer lg:flex-grow-0 lg:w-[170px] relative group overflow-hidden hidden lg:flex items-center justify-center border-t border-l lg:border-t-0 lg:border-b dark:border-Background-Light border-Extras-LT"
           >
             <svg
               width="46"
@@ -109,7 +109,7 @@ const NavButtons: React.FC<NavButtonsProps> = ({ toggleMethod, state }) => {
             </svg>
             <span
               className={`w-full ${
-                state ? "h-full" : "h-[1px]"
+                state ? "h-full" : "h-[2px]"
               } absolute bottom-[0px] dark:bg-Text-Relevant bg-Text-Relevant-LT ease-in duration-200 ${
                 state ? "opacity-100" : "opacity-0 group-hover:opacity-100"
               }`}

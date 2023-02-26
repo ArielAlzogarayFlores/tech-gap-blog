@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
   return (
     <>
       {" "}
-      <header className="fixed top-0 w-full h-[80px] flex items-center justify-between border-b dark:border-b-Background-Light border-b-Background-Light-LT dark:bg-Background-Default bg-Background-Default-LT">
+      <header className="fixed top-0 w-full h-[80px] flex items-center justify-between border-b dark:border-b-Background-Light border-b-Extras-LT dark:bg-Background-Default bg-Background-Default-LT">
         <div className="ml-[32px]">
           <Logo />
         </div>
